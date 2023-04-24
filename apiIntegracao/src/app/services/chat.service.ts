@@ -25,7 +25,7 @@ export class ChatService {
   sendMessage():Observable<any> {
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer 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',
+      'Authorization': '0',
     };   
 
     return this.http.post(this.apiUrl, this.postData, { headers })
