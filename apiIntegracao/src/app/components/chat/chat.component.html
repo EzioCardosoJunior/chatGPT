@@ -1,2 +1,94 @@
-<p>chat works!</p>
-<button (click)="sendMessage()">teste</button>
+<main class="form-signin w-100 m-auto">
+    <form [formGroup]="buscasChatGpt">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        <div class="form-floating">
+            <input type="email" class="form-control" id="termoBusca" formControlName="termoBusca"
+                placeholder="name@example.com">
+            <label for="floatingInput">{{teste | uppercase}}</label>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Jogador 1</h3>
+                    <input type="text" class="form-control" placeholder="Nome do jogador 1">
+                </div>
+                <div class="col-sm-4">
+                    <h3>Jogador 2</h3>
+                    <input type="text" class="form-control" placeholder="Nome do jogador 2">
+                </div>
+                <div class="col-sm-4">
+                    <h3>Resultado</h3>
+                    <input type="text" class="form-control" placeholder="Resultado">
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-sm-12 text-center">
+                    <button class="btn btn-primary btn-lg" id="reset">Reiniciar jogo</button>
+                </div>
+            </div>
+            <div class="col-sm-12 align-content-sm-center">
+                <div class="row mt-2">
+                    <div class="col-sm-1 text-center">
+                        <input class="btn btn-light btn-block" id="1" />
+                    </div>
+                    <div class="col-sm-1 text-center">
+                        <input class="btn btn-light btn-block" id="2" />
+                    </div>
+                    <div class="col-sm-1 text-center">
+                        <input class="btn btn-light btn-block" id="3" />
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-1 text-center">
+                        <input class="btn btn-light btn-block" id="4" />
+                    </div>
+                    <div class="col-sm-1 text-center">
+                        <input class="btn btn-light btn-block" id="5" />
+                    </div>
+                    <div class="col-sm-1 text-center">
+                        <input class="btn btn-light btn-block" id="6" />
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-1 text-center">
+                        <input class="btn btn-light btn-block" id="7" />
+                    </div>
+                    <div class="col-sm-1 text-center">
+                        <input class="btn btn-light btn-block" id="8" />
+                    </div>
+                    <div class="col-sm-1 text-center">
+                        <input class="btn btn-light btn-block" id="9" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div>
+            <textarea name="" id="" cols="30" rows="10">
+                {{exibeResposta}}
+            </textarea>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" (click)="sendMessage()" type="button">Sign in</button>
+    </form>
+</main>

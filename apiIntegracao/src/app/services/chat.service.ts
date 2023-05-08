@@ -7,25 +7,26 @@ import { Observable, tap } from 'rxjs';
 })
 export class ChatService {
 
-  texto: any = 'Qual a Capital do Brasil?'
+  texto: any;
 
   constructor(private http: HttpClient) { }
 
-  apiUrl = 'https://api.openai.com/v1/engines/curie/completions';
+  apiUrl = 'https://api.openai.com/v1/engines/text-davinci-003/completions';
   retorno:any;
   postData = {
-    prompt: this.texto,
+    prompt: '',
     temperature: 0.2,
-    max_tokens: 1000,
+    max_tokens: 200,
     top_p: 0.2,
     frequency_penalty: 1,
     presence_penalty: 1,
-    stop: ['.']
+    stop: ['_']
   };
-  sendMessage():Observable<any> {
+  sendMessage(a: any):Observable<any> {
+    this.postData.prompt = a;
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': '0',
+      'Authorization': 'Bearer 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',
     };   
 
     return this.http.post(this.apiUrl, this.postData, { headers })
